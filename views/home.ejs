@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<!-- HEAD SECTION OF WEB PAGE -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <!-- //THIS IS FONT AWESOME CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    
+    <!-- TITLE OF THE PAGE -->
+        <title><%= title %></title>
+
+
+    <!-- //LINK THE CSS FILE -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+
+
+<!-- BODY SECTION OF HOME PAGE -->
+<body>
+
+
+    <!-- THIS DIV IS MAIN DIV WHICH CONTAIN ALL THE ELEMENT LIKE FORM,ADD,DELTE ,SHOW TASK  -->
+    <div id="main">
+        <br>
+        <h1 id="mainheading">TODO App</h1>
+
+
+        <!-- THIS IS FORM FOR CREATING THE TASK WHICH TAKE DESCRIPTION , CATEGORY AND DATE AND INPUT -->
+        <form action="/create-todo" method="POST">
+            <div id="desc1"
+                style="border-top:1px solid rgba(0, 0, 0, 0.247);border-bottom:1px solid rgba(0, 0, 0, 0.281); padding: 10px;">
+                <p>DESCRIPTION</p>
+                <input type="text" name="description" placeholder="what do u want to do?" required id="formname">
+            </div>
+
+
+            
+<!-- CATEGORY AND DUE DATE OF FORM -->
+            <div class="container">
+                <div id="datediv">
+
+
+                    <!-- CATEGORY OPTION -->
+                    <p>CATEGORY</p>
+                    <p id=category1>Choose a category
+                        <select name="category" id="formname">
+                            <option style="display:none"></option>
+                            <option value="Personal">Personal</option>
+                            <option value="Work">Work</option>
+                            <option value="School">School</option>
+                            <option value="Cleaning">Cleaning</option>
+                            <option value="other">other</option>
+                        </select>
+                    </p>
+                </div>
+                <div id="date1">
+
+                    <p>DUE DATE</p>
+
+                    <input type="date" name="date" placeholder="" required id="formname">
+                </div>
+            </div>
+
+
+
+            <!-- //SUBMIT AND DELETE BUTTON OF THE FORM -->
+            <div class="container1"
+                style="padding:15px;border-top:1px solid rgba(0, 0, 0, 0.247);border-bottom:1px solid rgba(0, 0, 0, 0.247);">
+                <br><br><br>
+
+                <div> <button type="submit" id="button1"><i class="fa fa-plus" aria-hidden="true"></i> &nbsp; ADD
+                        TASK</button></div>
+                <div><button type="submit" id="button2" form="delete1"><i class="fa fa-trash" aria-hidden="true"></i>
+                        &nbsp; DELETE
+                        TASKS</button></div>
+
+            </div>
+        </form>
+        <br>
+
+
+
+<!-- THIS DIV SHOW ALL THE TASK IN THE DATABASE -->
+        <div class="show">
+
+
+            <!-- THIS FORM IS USED FOR DELETE THE TASK FROM DATA BASE -->
+            <form action="/delete-todo" method="POST" id="delete1">
+
+                <!-- FETCH ALL THE DATA FROM TODO LIST (DATA BASE) -->
+                <%  for(let i=todo_list.length-1;i>=0;i--){ %>
+
+
+
+                <div id="task">
+
+
+
+                    <!-- CHECK BOX AND DESCRIPTION AND CATEGORY INFORMATION OF THE TASK SHOW HERE  -->
+                    <input type="checkbox" id="check" name=task value="<%= todo_list[i]._id %>">
+
+                    <div> <span id="des"><%= todo_list[i].description %></span>
+                        <br>
+                        <span id="date">
+                            <i class="fa fa-calendar" aria-hidden="true" style="color: rgba(3, 73, 73, 0.726)"></i>
+                            <%= todo_list[i].date  %>
+                        </span>
+                    </div>
+                    <div id="cate"> <%= todo_list[i].category  %>
+                       
+                    </div>
+
+
+
+<!-- DELETE BY CROSS BUTTON -->
+                    <div id="remove_symbol">
+                        <a href="/delete_todo_one/?id=<%= todo_list[i]._id %>">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                <% } %>
+
+            </form>
+
+        </div>
+
+<!-- END OF MAIN DIV -->
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- END OF BODY -->
+</body>
+<!-- END OF HTML -->
+</html>

@@ -1,0 +1,13 @@
+Feature
+1 we can add any number of task in this app and this is directly save in database.
+2 we can delete many task at one time time by check box method
+3 we can delete one task by directly click on cross button
+4 there is a due date ,which denote the last date to complete this task
+5 there is a categeory option in it ,which is use to denote the personal,office,college ,work and other option are available.
+6 this web app is resonsive in nature
+7 very simple design and easy to use.
+
+Feature to add in future
+1 make the use login/register and user authentication
+2 each user have their own todo list
+3 notification of deadline of task

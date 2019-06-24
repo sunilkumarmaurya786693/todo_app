@@ -1,0 +1,217 @@
+
+/* THIS IS BODY CSS */
+body
+{
+    background-color: rgb(0,0,0);
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+/* THIS IS MAIN DIVISION WHICH CONTAIN ALL THE CONTENT */
+#main
+{
+    width: 50%;
+    height:auto;
+    background:white;
+    margin: auto;
+    margin-top:10vh;  
+}
+
+
+/* THIS IS HEADING OF todo*/
+#mainheading
+{
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 3em;
+    color: brown;
+}
+
+/* FORM ELEMENT */
+#desc1 p,#date1 p,#datediv p
+{
+font-size: 1.2em;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* FORM ELEMENT */
+#formname
+{
+    border:0;
+    background-color: transparent;
+    font-size: 1.2em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* FORM ELEMENT */
+#categorty1
+{font-size: 1.5em;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+
+/* THIS IS FLEX BOX CONTAINER CONTAIN FORM ELEMENT */
+.container
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* THIS IS FLEX CONTAIN THE SUBMIT AND DELETE BUTTON  */
+.container1
+{
+    /* position: relative; */
+    display: flex;
+    justify-content:center;
+}
+
+/* FORM ELEMENT */
+#datediv
+{
+    
+    /* background-color: aqua; */
+    border-right: 1px solid black;
+}
+
+/* THIS IS SUBMIT AND DELETE BUTTON */
+#button1,#button2
+{
+    
+    background-color: green;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    height: 4vw;
+    width: 15vw;
+    font-size: 1.2em;
+}
+
+#button2
+{
+    /* position: absolute; */
+    background:red;
+    /* top: 435px; */
+    /* right: 490px;; */
+}
+
+/* MOUSE HOVER EFFECT ON SUBMIT BUTTON */
+#button1:hover
+{
+    background:linear-gradient(to right, rgba(102, 236, 98, 0.87),white);
+    color: rgb(2, 114, 7);
+}
+
+
+/* THIS IS MOUSE HOVER EFFECT ON DELETE BUTTON */
+#button2:hover
+{
+    background:linear-gradient(to left, rgba(255, 0, 0, 0.555),white);
+    color: rgb(255, 0, 0);
+}
+
+
+/* THIS IS CHANGE COLOR EVEN NUMBERED OF TAKS LIST */
+#task:nth-child(2n)
+{
+    background:linear-gradient(to right,rgba(238, 194, 158, 0.267),white);
+}
+
+
+/* THIS IS CHANGE COLOR ODD NUMBERED OF TAKS LIST */
+#task:nth-child(2n+1)
+{
+    background:linear-gradient(to right,rgba(187, 238, 158, 0.267),white);
+}
+
+/* THIS IS FLEX BOX CONTAINER CONTAIN THE LIST OF TASK */ 
+.show
+{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+    
+    /* background-color: red; */
+    /* height: 180px; */
+    /* overflow-x: scroll; */
+}
+
+
+/* MOUSE HOVER EFFECT ON TASK LIST  */
+#task:hover,.container:hover,#desc1:hover
+{
+    
+
+background-color: rgba(128, 128, 128, 0.356);
+}
+
+/* THIS IS FLEX BOX EACH TASK */
+#task
+{
+    flex: 0 0 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+    padding-bottom: 10px;
+    padding-top: 10px;
+    /* margin-top: 20px; */
+}
+
+/* STYLE THE CATEGORY BOX */
+#cate
+{
+    background-color: rgb(0, 0, 255);
+    padding: 15px;
+    height: 20px;
+    width: 60px;
+    border-radius: 20px;
+    color: aliceblue;
+    font-size: 1.1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+/* FORM DESCRIPTION STYLE */
+#des
+{
+    color: rgb(107, 111, 114);
+    font-size: 1.2em;
+}
+
+
+/* FORM DATE STYLE */
+#date
+{
+    color: rgb(157, 159, 160);
+    /* font-size: 1.2em; */
+}
+
+
+/* INCREASE HEIGHT AND WIDTH OF CHECK BOX */
+#check
+{
+    width: 20px;
+    height: 20px;;
+}
+
+
+/* THIS IS DELETE BUTTON FOR SINGLE TASK */
+#remove_symbol
+{
+    font-size: 2em;
+    padding: 10px;
+
+}
+
+/* CHANGE THE COLOR OF THE DELETE BUTTON */
+#remove_symbol a
+{
+   
+    color: red;
+}
